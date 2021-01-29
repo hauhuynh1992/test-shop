@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.Address" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/sh_spacing_middle"
+            android:paddingStart="@dimen/sh_spacing_middle"
+            android:paddingTop="@dimen/sh_spacing_middle"
+            android:paddingEnd="@dimen/sh_spacing_standard_new"
+            android:paddingBottom="@dimen/sh_spacing_middle"
+            android:onClick="@{(view) -> callback.onClick(view,model)}"
+            android:background="@color/ShopHop_itemText_background">
+
+            <RadioButton
+                android:id="@+id/rbDefaultAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:buttonTint="@color/ShopHop_radiobuttonTint"
+                android:layout_marginEnd="@dimen/sh_spacing_standard" />
+
+            <include
+                android:id="@+id/included"
+                layout="@layout/shophop_item_address" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ShopHopOfferActivity">
+
+    <include
+        android:id="@+id/toolbar_lay" layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/toolbar_lay"
+        android:layout_above="@id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nsvContent"
+        android:visibility="invisible"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivOffer1"
+                style="@style/ShopHopOfferBanner"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                android:contentDescription="@string/sh_text_todo"
+                android:src="@drawable/shophop_ic_walk" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/sh_spacing_standard_new"
+                android:background="@color/ShopHop_itemText_background"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_marginTop="@dimen/sh_spacing_standard"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard">
+
+                    <TextView
+                        android:id="@+id/tvOfferName"
+                        style="@style/ShopHopHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toStartOf="@id/tvViewAll"
+                        android:text="@string/sh_text_sunday_special"
+                        android:textSize="@dimen/sh_font_size_large" />
+
+                    <TextView
+                        android:id="@+id/tvViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@color/ShopHop_colorPrimary"
+                        android:paddingStart="@dimen/sh_spacing_standard"
+                        android:paddingTop="@dimen/sh_spacing_control"
+                        android:paddingEnd="@dimen/sh_spacing_standard"
+                        android:paddingBottom="@dimen/sh_spacing_control"
+                        android:text="@string/sh_lbl_view_all"
+                        android:textColor="@color/ShopHop_white" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/LinearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_marginTop="@dimen/sh_spacing_standard"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtDay"
+                            style="@style/ShopHopCountdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Day"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sh_days"
+                            android:textColor="@color/ShopHop_textColorSecondary" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtHour"
+                            style="@style/ShopHopCountdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Hour"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sh_hours"
+                            android:textColor="@color/ShopHop_textColorSecondary"
+                            android:textSize="@dimen/sh_font_size_micro" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/sh_spacing_standard"
+                        android:layout_marginEnd="@dimen/sh_spacing_standard"
+                        android:layout_weight="1"
+                        android:text="@string/sh_text_colon"
+                        android:textColor="@color/ShopHop_textColorSecondary"
+                        android:textSize="@dimen/sh_font_size_normal" />
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtMinute"
+                            style="@style/ShopHopCountdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Minute"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sh_minutes"
+                            android:textColor="@color/ShopHop_textColorSecondary"
+                            android:textSize="@dimen/sh_font_size_micro" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/sh_spacing_standard"
+                        android:layout_marginEnd="@dimen/sh_spacing_standard"
+                        android:layout_weight="1"
+                        android:text="@string/sh_text_colon"
+                        android:textColor="@color/ShopHop_textColorSecondary"
+                        android:textSize="@dimen/sh_font_size_normal" />
+
+                    <LinearLayout
+                        android:id="@+id/LinearLayout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/txtSecond"
+                            style="@style/ShopHopCountdown" />
+
+                        <TextView
+                            android:id="@+id/txt_Second"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@string/sh_seconds"
+                            android:textColor="@color/ShopHop_textColorSecondary"
+                            android:textSize="@dimen/sh_font_size_micro" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvOffer"
+                    style="@style/ShopHopRecycleView"
+                    android:layout_marginStart="@dimen/sh_spacing_control"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_control"
+                    android:nestedScrollingEnabled="false"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="2" />
+
+            </LinearLayout>
+
+            <ImageView
+                    android:id="@+id/ivOffer2"
+                    style="@style/ShopHopOfferBanner"
+                    android:layout_height="@dimen/_150sdp"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard_new"
+                    android:contentDescription="@string/sh_text_todo"
+                    android:src="@drawable/shophop_ic_walk"
+                    android:visibility="gone"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+</RelativeLayout>

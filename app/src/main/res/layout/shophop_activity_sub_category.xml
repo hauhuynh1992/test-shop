@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.ShopHopSubCategoryActivity">
+
+    <include
+        android:id="@+id/toolbar_lay"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_above="@id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar_lay"
+        android:visibility="invisible"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvSubCategory"
+                    style="@style/ShopHopRecycleView"
+                    android:layout_marginTop="@dimen/sh_spacing_standard"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard" />
+
+                <ImageView
+                    android:id="@+id/ivOffer1"
+                    style="@style/ShopHopOfferBanner"
+                    android:contentDescription="@string/sh_text_todo"
+                    android:src="@drawable/shophop_ic_walk" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new">
+
+                    <TextView
+                        style="@style/ShopHopHeading"
+                        android:text="@string/sh_lbl_new_arrival" />
+
+                    <include
+                        android:id="@+id/viewNewArrival"
+                        layout="@layout/shophop_layout_view_all" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvNewArrival"
+                    style="@style/ShopHopRecycleView"
+                    android:layout_marginTop="@dimen/sh_spacing_standard"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/sh_spacing_standard"
+                    android:paddingEnd="@dimen/sh_spacing_standard" />
+
+                <ImageView
+                    android:id="@+id/ivOffer2"
+                    style="@style/ShopHopOfferBanner"
+                    android:contentDescription="@string/sh_text_todo"
+                    android:src="@drawable/shophop_ic_walk"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:id="@+id/rlFeature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new">
+
+                    <TextView
+                        style="@style/ShopHopHeading"
+                        android:text="@string/sh_lbl_Featured" />
+
+                    <include
+                        android:id="@+id/viewPopular"
+                        layout="@layout/shophop_layout_view_all" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvPopular"
+                    style="@style/ShopHopRecycleView"
+                    android:layout_marginTop="@dimen/sh_spacing_standard"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard_new"
+                    android:clipToPadding="false"
+                    android:paddingStart="@dimen/sh_spacing_standard"
+                    android:paddingEnd="@dimen/sh_spacing_standard" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+</RelativeLayout>

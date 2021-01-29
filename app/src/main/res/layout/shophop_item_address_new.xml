@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.Address" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <com.example.quiz.utils.swipereveallayout.SwipeRevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        app:dragEdge="right"
+        app:mode="same_level"
+        android:id="@+id/swipeLayout">
+
+        <FrameLayout
+            android:id="@+id/delete_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/ShopHop_white"
+                    android:onClick="@{(view) -> callback.onClick(view,model)}"
+                    android:src="@drawable/shophop_ic_edit"
+                    android:layout_marginTop="@dimen/sh_spacing_control"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabDelete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:backgroundTint="@color/ShopHop_colorPrimary"
+                    android:src="@drawable/shophop_ic_delete"
+                    android:tint="@color/ShopHop_white"
+                    android:layout_marginTop="@dimen/sh_spacing_control"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                    android:onClick="@{(view) -> callback.onClick(view,model)}" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/front_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/addressLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                android:layout_marginBottom="@dimen/sh_spacing_middle"
+                android:paddingStart="@dimen/sh_spacing_middle"
+                android:paddingTop="@dimen/sh_spacing_middle"
+                android:paddingEnd="@dimen/sh_spacing_standard_new"
+                android:paddingBottom="@dimen/sh_spacing_middle"
+                android:onClick="@{(view) -> callback.onClick(view,model)}"
+                android:background="@color/ShopHop_itemText_background">
+
+                <RadioButton
+                    android:id="@+id/rbDefaultAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:buttonTint="@color/ShopHop_radiobuttonTint"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard" />
+
+                <include
+                    android:id="@+id/included"
+                    layout="@layout/shophop_item_address" />
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </com.example.quiz.utils.swipereveallayout.SwipeRevealLayout>
+</layout>

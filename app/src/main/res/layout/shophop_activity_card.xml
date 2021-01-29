@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ShopHop_background_color"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar_lay" layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/toolbar_lay"
+        android:layout_above="@id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/ShopHopHeading"
+                android:text="@string/sh_lbl_card_number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edDigit1"
+                    style="@style/ShopHopCardNumberEditText">
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/edDigit2"
+                    style="@style/ShopHopCardNumberEditText"
+                    android:layout_marginStart="@dimen/sh_spacing_standard" />
+
+                <EditText
+                    android:id="@+id/edDigit3"
+                    style="@style/ShopHopCardNumberEditText"
+
+                    android:layout_marginStart="@dimen/sh_spacing_standard" />
+
+                <EditText
+                    android:id="@+id/edDigit4"
+                    style="@style/ShopHopCardNumberEditText"
+
+                    android:layout_marginStart="@dimen/sh_spacing_standard" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shophop_bg_rounded_border_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_6sdp">
+
+
+                    <Spinner
+                        android:id="@+id/spMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sh_spacing_control"
+                        android:layout_marginEnd="@dimen/sh_spacing_control" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_weight="1"
+                    android:background="@drawable/shophop_bg_rounded_border_edittext"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_6sdp">
+
+
+                    <Spinner
+                        android:id="@+id/spYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sh_spacing_control"
+                        android:layout_marginEnd="@dimen/sh_spacing_control" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/ShopHopHeading"
+                android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                android:text="@string/sh_lbl_cvv" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_middle">
+
+                <EditText
+                    android:id="@+id/edCvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shophop_bg_rounded_border_edittext"
+
+                    android:imeOptions="actionNext"
+                    android:inputType="numberPassword"
+                    android:letterSpacing="0.2"
+                    android:maxLength="3"
+                    android:padding="@dimen/sh_spacing_standard"
+                    android:textColor="@color/ShopHop_textColorSecondary"
+                    android:textSize="@dimen/sh_font_size_normal" />
+
+                <ImageView
+                        android:id="@+id/ivShowPwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/sh_text_todo"
+                        android:padding="@dimen/_6sdp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/shophop_ic_eye_line"/>
+
+                <ImageView
+                        android:id="@+id/ivHidePwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/sh_text_todo"
+                        android:padding="@dimen/_6sdp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/shophop_ic_eye_off_line"
+                        android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <TextView
+                style="@style/ShopHopHeading"
+                android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                android:text="@string/sh_lbl_card_holder_name" />
+
+            <EditText
+                android:id="@+id/edHolderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:background="@drawable/shophop_bg_rounded_border_edittext"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="@dimen/sh_spacing_standard"
+                android:textColor="@color/ShopHop_textColorSecondary"
+                android:textSize="@dimen/sh_font_size_normal" />
+
+            <include
+                layout="@layout/shophop_layout_paymentdetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/sh_spacing_standard_new" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSubmit"
+                style="@style/ShopHopMaterialButtonStyle.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_large"
+                android:shadowColor="@color/ShopHop_colorPrimary"
+                android:text="@string/sh_lbl_add_card"
+                android:textAppearance="@style/FontMedium" />
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+</RelativeLayout>

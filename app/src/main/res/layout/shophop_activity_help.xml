@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ShopHop_background_color"
+    android:orientation="vertical"
+    tools:context=".activity.ShopHopHelpActivity">
+
+    <include
+        android:id="@+id/toolbar_lay"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/banner_container"
+        android:layout_below="@id/toolbar_lay"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/edtContact"
+            style="@style/ShopHopEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+            android:background="@drawable/shophop_bg_ractangle_rounded_stroke"
+            android:hint="@string/sh_hint_enter_your_contact_number"
+            android:inputType="phone"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/ShopHopEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+            android:background="@drawable/shophop_bg_ractangle_rounded_stroke"
+            android:hint="@string/sh_hint_enter_your_email_id"
+            android:inputType="textEmailAddress"
+            android:singleLine="true" />
+
+        <EditText
+            android:id="@+id/edtDescription"
+            style="@style/ShopHopEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+            android:background="@drawable/shophop_bg_ractangle_multiline"
+            android:gravity="top"
+            android:hint="@string/sh_hint_description"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:singleLine="true" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            style="@style/ShopHopMaterialButtonStyle.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_marginTop="@dimen/sh_spacing_xlarge"
+            android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+            android:shadowColor="@color/ShopHop_colorPrimary"
+            android:text="@string/sh_lbl_submit"
+            android:textAppearance="@style/FontMedium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ShopHop_background_color"
+    android:orientation="vertical"
+    tools:ignore="UnusedAttribute"
+    tools:context=".activity.ShopHopEmailActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/sh_spacing_standard_new"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/ShopHopHeading"
+            android:text="@string/sh_lbl_email_to_woobox" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:autofillHints="@string/sh_text_iqonicdesign_gmail_com"
+            android:hint="@string/sh_text_iqonicdesign_gmail_com"
+            android:theme="@style/ShopHopEditTextTheme" />
+
+        <TextView
+            style="@style/ShopHopHeading"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:visibility="gone"
+            android:text="@string/sh_lbl_from" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/sh_reference_email"
+            android:visibility="gone"
+            android:inputType="textEmailAddress"
+            android:hint="@string/sh_reference_email"
+            android:textColor="@color/ShopHop_textColorSecondary"
+            android:theme="@style/ShopHopEditTextTheme" />
+
+        <TextView
+            style="@style/ShopHopHeading"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:text="@string/sh_lbl_description" />
+
+        <EditText
+            android:id="@+id/edtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/sh_hint_description_here"
+            android:autofillHints="@string/sh_hint_description_here"
+            android:lines="5"
+            android:gravity="top"
+            android:inputType="text"
+            android:textColor="@color/ShopHop_textColorSecondary"
+            android:theme="@style/ShopHopEditTextTheme" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendMail"
+            style="@style/ShopHopMaterialButtonStyle.Filled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard"
+            android:layout_marginTop="@dimen/sh_spacing_large"
+            android:layout_marginEnd="@dimen/sh_spacing_standard"
+            android:shadowColor="@color/ShopHop_colorPrimary"
+            android:text="@string/sh_lbl_send_mail"
+            android:textAppearance="@style/FontMedium" />
+    </LinearLayout>
+</LinearLayout>

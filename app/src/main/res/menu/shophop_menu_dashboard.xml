@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/shophop_ic_search"
+        android:orderInCategory="100"
+        android:title="@string/sh_action_search"
+        android:visible="true"
+        app:iconTint="@color/ShopHop_black"
+        app:showAsAction="always"
+       />
+    <item
+        android:id="@+id/action_filter"
+        android:icon="@drawable/shophop_ic_filter"
+        android:orderInCategory="100"
+        android:title="@string/sh_action_filter"
+        android:visible="false"
+        app:iconTint="@color/ShopHop_black"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/shophop_ic_hearts"
+        android:iconTint="@color/ShopHop_black"
+        android:orderInCategory="100"
+        android:title="@string/sh_action_filter"
+        android:visible="false"
+        app:actionLayout="@layout/shophop_menu_cart"
+        app:iconTint="@color/ShopHop_black"
+        app:showAsAction="always" />
+</menu>

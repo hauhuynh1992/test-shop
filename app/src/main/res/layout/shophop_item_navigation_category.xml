@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.CategoryData" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_23sdp"
+        android:paddingEnd="@dimen/sh_spacing_control_half"
+        android:paddingTop="@dimen/sh_spacing_middle"
+        android:paddingBottom="@dimen/sh_spacing_middle"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/ivCat"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:contentDescription="@string/sh_text_todo"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/shophop_ic_dresses_women"
+            app:tint="@color/ShopHop_textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            style="@style/ShopHopSidebarLabel.ShopHopSidebarOption"
+            android:paddingStart="@dimen/_8sdp"
+            android:paddingEnd="@dimen/sh_spacing_control"
+            android:foreground="@null"
+            android:gravity="center_vertical"
+            android:padding="0dp"
+            android:text="@{model.name}"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+</layout>

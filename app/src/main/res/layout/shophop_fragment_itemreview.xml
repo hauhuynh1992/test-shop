@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.ProductModel" />
+
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="MissingPrefix">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLblRatings"
+                        style="@style/ShopHopHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/btnRateNow"
+                        android:layout_marginEnd="@dimen/sh_spacing_standard"
+                        android:text="@string/sh_lbl_ratings"/>
+
+                    <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnRateNow"
+                            style="@style/ShopHopMaterialButtonStyle.Stroked"
+                            android:textAppearance="@style/FontSemiBold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:paddingStart="@dimen/sh_spacing_middle"
+                            android:paddingEnd="@dimen/sh_spacing_middle"
+                            android:text="@string/sh_lbl_rate_now"
+                            android:visibility="gone"
+                            android:textColor="@color/ShopHop_colorPrimary"
+                            android:textSize="@dimen/sh_font_size_micro" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sh_spacing_middle">
+
+                    <RelativeLayout
+                        android:id="@+id/rlReviewInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                        android:layout_marginTop="@dimen/sh_spacing_middle"
+                        android:layout_marginEnd="@dimen/sh_spacing_standard">
+
+                        <ImageView
+                            android:id="@+id/ivBackground"
+                            android:layout_width="@dimen/_90sdp"
+                            android:layout_height="@dimen/_90sdp"
+                            android:background="@drawable/shophop_bg_circle"
+                            android:contentDescription="@string/sh_text_todo"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                    android:id="@+id/tvReviewRate"
+                                    android:textAppearance="@style/FontSemiBold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:drawableEnd="@drawable/shophop_ic_star_black_24dp"
+                                    android:drawablePadding="@dimen/sh_spacing_control"
+                                    android:textColor="@color/ShopHop_textColorPrimary"
+                                    android:textSize="@dimen/sh_font_size_normal"/>
+
+                            <TextView
+                                android:id="@+id/tvTotalReview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/ShopHop_textColorSecondary"
+                                android:textSize="@dimen/sh_font_size_small"/>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                        android:layout_toEndOf="@id/rlReviewInfo"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sh_spacing_standard"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvLbl5"
+                                style="@style/ShopHopRatingText"
+                                android:gravity="start"
+                                android:text="@string/sh_lbl_5"/>
+
+                            <SeekBar
+                                android:id="@+id/sb5Star"
+                                style="@style/ShopHopRatingSeekBar"
+                                android:enabled="false"
+                                android:layout_toStartOf="@id/tv5Count"
+                                android:layout_toEndOf="@id/tvLbl5"
+                                android:backgroundTint="@color/ShopHop_bg_4star"
+                                android:progressDrawable="@drawable/shophop_bg_seekbar_green"/>
+
+                            <TextView
+                                android:id="@+id/tv5Count"
+                                style="@style/ShopHopRatingSubText" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sh_spacing_control"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvLbl4"
+                                style="@style/ShopHopRatingText"
+                                android:text="@string/sh_lbl_4"/>
+
+                            <SeekBar
+                                android:id="@+id/sb4Star"
+                                style="@style/ShopHopRatingSeekBar"
+                                android:layout_toStartOf="@id/tv4Count"
+                                android:layout_toEndOf="@id/tvLbl4"
+                                android:progressTint="@color/ShopHop_bg_4star"
+                                android:progressDrawable="@drawable/shophop_bg_seekbar_green"/>
+
+                            <TextView
+                                android:id="@+id/tv4Count"
+                                style="@style/ShopHopRatingSubText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sh_spacing_control"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvLbl3"
+                                style="@style/ShopHopRatingText"
+                                android:text="@string/sh_lbl_3"/>
+
+                            <SeekBar
+                                android:id="@+id/sb3Star"
+                                style="@style/ShopHopRatingSeekBar"
+                                android:layout_toStartOf="@id/tv3Count"
+                                android:layout_toEndOf="@id/tvLbl3"
+                                android:progressDrawable="@drawable/shophop_bg_seekbar_yellow"/>
+
+                            <TextView
+                                android:id="@+id/tv3Count"
+                                style="@style/ShopHopRatingSubText" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sh_spacing_control"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvLbl2"
+                                style="@style/ShopHopRatingText"
+                                android:text="@string/sh_lbl_2"/>
+
+                            <SeekBar
+                                android:id="@+id/sb2Star"
+                                style="@style/ShopHopRatingSeekBar"
+                                android:layout_toStartOf="@id/tv2Count"
+                                android:layout_toEndOf="@id/tvLbl2"
+                                android:progressDrawable="@drawable/shophop_bg_seekbar_yellow"/>
+
+                            <TextView
+                                android:id="@+id/tv2Count"
+                                style="@style/ShopHopRatingSubText" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/sh_spacing_control"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/tvLbl1"
+                                style="@style/ShopHopRatingText"
+                                android:text="@string/sh_lbl_1"/>
+
+                            <SeekBar
+                                android:id="@+id/sb1Star"
+                                style="@style/ShopHopRatingSeekBar"
+                                android:layout_toStartOf="@id/tv1Count"
+                                android:layout_toEndOf="@id/tvLbl1"
+                                android:progressDrawable="@drawable/shophop_bg_seekbar_red"/>
+
+                            <TextView
+                                android:id="@+id/tv1Count"
+                                style="@style/ShopHopRatingSubText" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                    android:background="@color/ShopHop_view_color" />
+
+                <TextView
+                    android:id="@+id/tvLblReview"
+                    style="@style/ShopHopHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                    android:text="@string/sh_lbl_reviews"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvReview"
+                    style="@style/ShopHopRecycleView"
+                    android:layout_marginTop="@dimen/sh_spacing_standard_new"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingBottom="@dimen/_34sdp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+                <include layout="@layout/shophop_layout_nodata" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+</layout>

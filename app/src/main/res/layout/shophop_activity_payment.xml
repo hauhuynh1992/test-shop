@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ShopHop_background_color"
+    android:orientation="vertical"
+    tools:context=".activity.ShopHopPaymentActivity">
+
+    <include
+        android:id="@+id/tb"
+        layout="@layout/toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/banner_container"
+        android:layout_below="@id/tb"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new">
+
+                <TextView
+                    android:id="@+id/lblQuickPay"
+                    style="@style/ShopHopHeading"
+                    android:layout_width="match_parent"
+                    android:layout_toStartOf="@id/btnAddCard"
+                    android:layout_centerVertical="true"
+                    android:text="@string/sh_lbl_quick_pay" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAddCard"
+                    style="@style/ShopHopMaterialButtonStyle.Stroked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_36sdp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="0dp"
+                    android:text="@string/sh_lbl_add_card"
+                    android:textAppearance="@style/FontMedium"
+                    android:textColor="@color/ShopHop_colorPrimary"
+                    android:textSize="@dimen/sh_font_size_micro" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCard"
+                style="@style/ShopHopRecycleView"
+                android:paddingStart="@dimen/sh_spacing_standard_new"
+                android:paddingTop="@dimen/sh_spacing_standard_new"
+                android:paddingEnd="0dp" />
+
+            <TextView
+                android:id="@+id/tvPayWithCards"
+                style="@style/ShopHopPaymentOption"
+                android:drawableStart="@drawable/shophop_ic_bank_card_line"
+                android:text="@string/sh_lbl_pay_with_debit_credit_card" />
+
+            <TextView
+                android:id="@+id/tvNetBanking"
+                style="@style/ShopHopPaymentOption"
+                android:visibility="gone"
+                android:drawableStart="@drawable/shophop_ic_earth_line"
+                android:text="@string/sh_lbl_net_banking" />
+
+            <TextView
+                android:id="@+id/tvCash"
+                style="@style/ShopHopPaymentOption"
+                android:drawableStart="@drawable/shophop_ic_bank_card_line"
+                android:text="@string/sh_lbl_cash_on_delivery" />
+
+            <TextView
+                android:id="@+id/tvOther"
+                style="@style/ShopHopPaymentOption"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/sh_spacing_middle"
+                android:drawableStart="@drawable/shophop_ic_wallet_line"
+                android:text="@string/sh_lbl_other_wallet" />
+
+            <include layout="@layout/shophop_layout_paymentdetail" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+</RelativeLayout>

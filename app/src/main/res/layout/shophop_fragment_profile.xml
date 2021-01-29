@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ShopHop_background_color"
+    tools:ignore="UnusedAttribute">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:paddingBottom="@dimen/sh_spacing_standard_new">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/editProfileImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/sh_spacing_xlarge">
+
+                <com.example.quiz.utils.ShopHopCircleImageView
+                    android:id="@+id/ivProfileImage"
+                    android:layout_width="@dimen/_110sdp"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/sh_spacing_standard"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/shophop_ic_avatar"
+                    app:civ_border_color="@color/ShopHop_view_color"
+                    app:civ_border_width="@dimen/_4sdp" />
+
+                <ImageView
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/sh_spacing_standard"
+                    android:layout_marginBottom="@dimen/sh_spacing_standard_new"
+                    android:background="@drawable/shophop_bg_circle_white"
+                    android:padding="@dimen/_6sdp"
+                    android:contentDescription="@string/sh_text_todo"
+                    android:src="@drawable/shophop_ic_camera"
+                    app:layout_anchor="@id/ivProfileImage"
+                    app:layout_anchorGravity="end|bottom"
+                    app:tint="@color/ShopHop_colorPrimaryDark" />
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sh_spacing_xxlarge">
+
+                <EditText
+                    android:id="@+id/edtFirstName"
+                    style="@style/ShoHopFieldRounded"
+                    android:inputType="textCapWords"
+                    android:layout_marginEnd="@dimen/sh_spacing_control"
+                    android:layout_weight="1"
+                    android:hint="@string/sh_hint_first_name"
+                    android:autofillHints="@string/sh_hint_first_name"
+                    android:nextFocusDown="@+id/edtLastName"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/edtLastName"
+                    style="@style/ShoHopFieldRounded"
+                    android:inputType="textCapWords"
+                    android:layout_marginStart="@dimen/sh_spacing_control"
+                    android:layout_weight="1"
+                    android:hint="@string/sh_hint_last_name"
+                    android:autofillHints="@string/sh_hint_last_name"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                android:background="@drawable/shophop_bg_ractangle_rounded_stroke">
+
+                <Spinner
+                    android:id="@+id/spnGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/sh_spacing_standard"
+                    android:entries="@array/sh_gender" />
+            </RelativeLayout>
+
+            <EditText
+                android:id="@+id/edtMobileNo"
+                style="@style/ShoHopFieldRounded"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:hint="@string/sh_hint_mobile_no"
+                android:autofillHints="@string/sh_hint_mobile_no"
+                android:inputType="number"
+                android:visibility="gone"
+                android:maxEms="12"
+                android:maxLength="12" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                style="@style/ShoHopFieldRounded"
+                android:layout_marginTop="@dimen/sh_spacing_middle"
+                android:hint="@string/sh_hint_email"
+                android:autofillHints="@string/sh_hint_email"
+                android:inputType="textEmailAddress" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveProFile"
+                style="@style/ShopHopMaterialButtonStyle.Filled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginTop="@dimen/sh_spacing_large"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                android:layout_marginBottom="@dimen/sh_spacing_standard"
+                android:text="@string/sh_lbl_save_profile"
+                android:textSize="@dimen/sh_font_size_medium" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnChangePassword"
+                style="@style/ShopHopMaterialButtonStyle.Stroked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                android:layout_marginBottom="@dimen/sh_spacing_standard"
+                android:text="@string/sh_lbl_change_pswd"
+                android:textColor="@color/ShopHop_textColorPrimary"
+                android:textSize="@dimen/sh_font_size_medium"
+
+                app:strokeColor="@color/ShopHop_editText_background" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeactivate"
+                style="@style/ShopHopMaterialButtonStyle.Stroked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sh_spacing_standard_new"
+                android:layout_marginEnd="@dimen/sh_spacing_standard_new"
+                android:layout_marginBottom="@dimen/sh_spacing_large"
+                android:text="@string/sh_lbl_account_deactivate"
+                android:textColor="@color/ShopHop_textColorPrimary"
+                android:textSize="@dimen/sh_font_size_medium"
+                android:visibility="gone"
+                app:strokeColor="@color/ShopHop_editText_background" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

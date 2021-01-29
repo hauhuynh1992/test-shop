@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.CategoryData" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/llMen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/sh_spacing_standard_new"
+        android:layout_marginTop="@dimen/sh_spacing_standard"
+        android:layout_marginBottom="@dimen/sh_spacing_standard">
+
+        <ImageView
+            android:id="@+id/ivCategory"
+            style="@style/ShopHopCatIcon"
+            android:background="@drawable/shophop_bg_circle_category"
+            android:src="@drawable/shophop_ic_home"
+            android:tint="@color/ShopHop_white"
+            android:contentDescription="@string/sh_text_todo"
+            app:srcCompat="@drawable/shophop_ic_home" />
+
+        <TextView
+            android:id="@+id/tvCatName"
+            style="@style/ShopHopCatText"
+            android:paddingStart="@dimen/sh_spacing_standard"
+            android:paddingTop="@dimen/sh_spacing_control"
+            android:paddingEnd="@dimen/sh_spacing_standard"
+            android:paddingBottom="@dimen/sh_spacing_control"
+            android:text="@{model.name}"
+            android:textColor="@color/ShopHop_colorPrimary"
+            tools:text="Clothes" />
+
+    </LinearLayout>
+</layout>

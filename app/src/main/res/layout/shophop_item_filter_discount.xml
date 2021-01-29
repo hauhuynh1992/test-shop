@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.Discount" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/sh_spacing_middle"
+        android:paddingStart="@dimen/sh_spacing_control_half"
+        android:paddingEnd="@dimen/sh_spacing_standard"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:paddingBottom="@dimen/sh_spacing_middle">
+
+        <ImageView
+            android:id="@+id/ivSelect"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shophop_bg_ractangal"
+            android:padding="@dimen/sh_spacing_control_half"
+            android:contentDescription="@string/sh_text_todo"
+            app:tint="@color/ShopHop_textColorSecondary" />
+
+        <TextView
+            android:id="@+id/tvDiscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sh_spacing_standard_new"
+            android:layout_toEndOf="@id/ivSelect"
+            android:text="@{model.discount}"
+            android:textColor="@color/ShopHop_textColorSecondary"
+            android:textSize="@dimen/sh_font_size_medium" />
+
+    </RelativeLayout>
+</layout>

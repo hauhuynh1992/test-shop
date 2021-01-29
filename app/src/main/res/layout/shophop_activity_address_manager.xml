@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/ShopHop_background_color"
+    tools:context=".activity.ShopHopAddressManagerActivity">
+
+    <include
+        android:id="@+id/toolbar_lay"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_below="@id/toolbar_lay"
+        android:layout_above="@id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAddress"
+            style="@style/ShopHopRecycleView"
+            android:paddingTop="@dimen/sh_spacing_standard_new"
+            android:paddingBottom="@dimen/_50sdp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAddNew"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/sh_spacing_standard"
+            style="@style/ShopHopMaterialButtonStyle.Filled"
+            android:layout_alignParentBottom="true"
+            android:text="@string/sh_lbl_add_new_address" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <include layout="@layout/shophop_layout_ads" />
+
+    </LinearLayout>
+
+</RelativeLayout>

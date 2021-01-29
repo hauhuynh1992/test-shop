@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sh_spacing_standard_new"
+            android:layout_toStartOf="@id/ivClose"
+            android:text="@string/sh_lbl_select_address_type"
+            android:textColor="@color/ShopHop_textColorPrimary"
+            android:textSize="@dimen/sh_font_size_normal" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/sh_spacing_standard_new"
+            android:layout_marginEnd="@dimen/sh_spacing_control"
+            android:padding="@dimen/sh_spacing_control"
+            android:contentDescription="@string/sh_text_todo"
+            android:src="@drawable/shophop_ic_close_black" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rgAddressType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sh_spacing_standard"
+        android:layout_marginEnd="@dimen/sh_spacing_standard"
+        android:layout_marginBottom="@dimen/sh_spacing_standard_new"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/ShopHop_radiobuttonTint"
+            android:text="@string/sh_lbl_home"
+            android:textColor="@color/ShopHop_textColorPrimary"
+            android:textSize="@dimen/sh_font_size_medium" />
+
+        <RadioButton
+            android:id="@+id/rbOffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sh_spacing_standard"
+            android:buttonTint="@color/ShopHop_radiobuttonTint"
+            android:text="@string/sh_lbl_office_commercial"
+            android:textColor="@color/ShopHop_textColorPrimary"
+            android:textSize="@dimen/sh_font_size_medium" />
+
+    </RadioGroup>
+</LinearLayout>

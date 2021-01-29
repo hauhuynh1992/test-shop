@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
 }
 
 android {
@@ -34,6 +35,12 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    dataBinding {
+        true
+    }
+    dataBinding {
+        enabled = true
     }
 }
 
@@ -69,5 +76,24 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.11.0")
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 
+
+    kaptAndroidTest 'androidx.databinding:databinding-compiler:3.3.2'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.browser:browser:1.0.0'
+//
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.google.firebase:firebase-ads:18.2.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
+    implementation 'com.airbnb.android:lottie:3.0.0'
+    implementation 'nl.dionsegijn:konfetti:1.1.3'
 
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.ProductModel" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sh_spacing_control"
+        android:layout_marginEnd="@dimen/sh_spacing_control"
+        android:layout_marginBottom="@dimen/sh_spacing_standard"
+        android:onClick="@{(view) -> callback.onClick(view,model)}"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sh_product_grid_img_height"
+                android:background="@color/ShopHop_item_background"
+                android:contentDescription="@string/sh_text_todo"
+                android:padding="@dimen/sh_stroke_width"
+                android:scaleType="fitXY"
+                android:src="@drawable/shophop_ic_product2" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/sh_spacing_control"
+            android:paddingTop="@dimen/sh_spacing_standard"
+            android:paddingEnd="@dimen/sh_spacing_control"
+            android:paddingBottom="@dimen/sh_spacing_standard">
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/sh_spacing_control_half"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@{model.name}"
+                android:textAppearance="@style/FontMedium"
+                android:textColor="@color/ShopHop_textColorPrimary"
+                android:textSize="@dimen/sh_font_size_medium" />
+
+            <TextView
+                android:id="@+id/tvOffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvProductName"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColor="@color/ShopHop_green"
+                android:textSize="@dimen/sh_font_size_small" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

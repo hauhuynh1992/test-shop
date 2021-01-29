@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_margin="@dimen/sh_spacing_standard_new"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/ShopHop_white"
+    app:cardCornerRadius="@dimen/sh_spacing_standard"
+    tools:ignore="MissingPrefix">
+
+    <RelativeLayout
+        android:id="@+id/rlMainReward"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/sh_spacing_standard_new"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/ivReward"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:contentDescription="@string/sh_text_todo"
+                android:src="@drawable/shophop_ic_app_icon" />
+
+            <TextView
+                android:id="@+id/tvRewardLbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/sh_spacing_middle"
+                android:textAppearance="@style/FontSemiBold"
+                android:textColor="@color/ShopHop_textColorPrimary"
+                android:textSize="@dimen/sh_font_size_xlarge" />
+        </LinearLayout>
+
+        <com.example.quiz.utils.scratch.ShopHopScratchTextView
+            android:id="@+id/scratch_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/ShopHop_transparent"
+            android:textSize="90sp"
+            app:overlay_image="@drawable/shophop_ic_scratch_pattern" />
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

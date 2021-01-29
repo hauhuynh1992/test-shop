@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.Color" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:onClick="@{(view) -> callback.onClick(view,model)}"
+            android:layout_margin="@dimen/sh_spacing_standard">
+
+            <View
+                android:id="@+id/viewColor"
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="@dimen/_10sdp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shophop_bg_circle_color" />
+
+            <ImageView
+                android:id="@+id/ivChecked"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shophop_bg_circle_color"
+                android:padding="@dimen/sh_spacing_control"
+                android:src="@drawable/shophop_ic_check"
+                android:tint="@color/ShopHop_white"
+                android:contentDescription="@string/sh_text_todo"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

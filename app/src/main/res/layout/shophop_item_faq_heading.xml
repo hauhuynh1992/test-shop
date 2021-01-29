@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.quiz.models.Category" />
+
+        <variable
+            name="callback"
+            type="com.example.quiz.base.BaseRecyclerAdapter.OnClickListener" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/sh_spacing_standard"
+        android:paddingEnd="@dimen/sh_spacing_control_half"
+        android:paddingTop="@dimen/sh_spacing_standard"
+        android:paddingBottom="@dimen/sh_spacing_standard">
+
+
+        <TextView
+            android:id="@+id/tvCategory"
+            style="@style/ShopHopSidebarLabel.ShopHopSidebarOption"
+            android:drawableEnd="@drawable/shophop_ic_keyboard_arrow_right_black"
+            android:padding="0dp"
+            android:text="@{model.categoryName}" />
+
+    </LinearLayout>
+</layout>
