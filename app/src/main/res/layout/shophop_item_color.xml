@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -37,9 +37,9 @@
                 android:background="@drawable/shophop_bg_circle_color"
                 android:padding="@dimen/sh_spacing_control"
                 android:src="@drawable/shophop_ic_check"
-                android:tint="@color/ShopHop_white"
                 android:contentDescription="@string/sh_text_todo"
-                android:visibility="gone" />
+                android:visibility="gone"
+                app:tint="@color/ShopHop_white" />
         </RelativeLayout>
     </LinearLayout>
 </layout>

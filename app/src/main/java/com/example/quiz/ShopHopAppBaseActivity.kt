@@ -12,16 +12,14 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.example.quiz.ShopHopApp.Companion.noInternetDialog
 import com.example.quiz.utils.extensions.changeToolbarFont
-import android.widget.RelativeLayout
-import androidx.core.content.ContextCompat
-import com.google.android.gms.ads.*
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
 
 open class ShopHopAppBaseActivity : AppCompatActivity() {
-//    private var mAdView: AdView? = null
+    //    private var mAdView: AdView? = null
     private var progressDialog: Dialog? = null
 
     fun disableHardwareRendering(v: View) {
@@ -57,11 +55,13 @@ open class ShopHopAppBaseActivity : AppCompatActivity() {
                     flags or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR   // add LIGHT_STATUS_BAR to flag
                 activity.window.decorView.systemUiVisibility = flags
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-                window.statusBarColor = ContextCompat.getColor(this,R.color.ShopHop_background_color)
+                window.statusBarColor =
+                    ContextCompat.getColor(this, R.color.ShopHop_background_color)
                 //window.setBackgroundDrawable(background)
             }
             else -> {
-                window.statusBarColor =  ContextCompat.getColor(this,R.color.ShopHop_colorPrimaryDark)
+                window.statusBarColor =
+                    ContextCompat.getColor(this, R.color.ShopHop_colorPrimaryDark)
             }
         }
     }
@@ -117,26 +117,26 @@ open class ShopHopAppBaseActivity : AppCompatActivity() {
 //
 //    }
 
-    fun loadInterstialAd(onFinished:(Int)->Unit) {
+    fun loadInterstialAd(onFinished: (Int) -> Unit) {
 
-        val mInterstitialAd = InterstitialAd(this)
-        mInterstitialAd.adUnitId = getString(R.string.sh_interstitial_id)
-        mInterstitialAd.loadAd(AdRequest.Builder().build())
-        mInterstitialAd.adListener=object :AdListener(){
-            override fun onAdLoaded() {
-                super.onAdLoaded()
-                mInterstitialAd.show()
-            }
-            override fun onAdFailedToLoad(p0: Int) {
-                super.onAdFailedToLoad(p0)
-                onFinished(0)
-            }
-
-            override fun onAdClosed() {
-                super.onAdClosed()
-                onFinished(1)
-            }
-        }
+//        val mInterstitialAd = InterstitialAd(this)
+//        mInterstitialAd.adUnitId = getString(R.string.sh_interstitial_id)
+//        mInterstitialAd.loadAd(AdRequest.Builder().build())
+//        mInterstitialAd.adListener=object :AdListener(){
+//            override fun onAdLoaded() {
+//                super.onAdLoaded()
+//                mInterstitialAd.show()
+//            }
+//            override fun onAdFailedToLoad(p0: Int) {
+//                super.onAdFailedToLoad(p0)
+//                onFinished(0)
+//            }
+//
+//            override fun onAdClosed() {
+//                super.onAdClosed()
+//                onFinished(1)
+//            }
+//        }
     }
 
     override fun attachBaseContext(newBase: Context) {

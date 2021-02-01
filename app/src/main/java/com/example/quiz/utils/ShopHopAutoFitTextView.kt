@@ -3,9 +3,8 @@ package com.example.quiz.utils
 import android.content.Context
 import android.util.AttributeSet
 import android.util.TypedValue
-import android.widget.TextView
 
-class ShopHopAutoFitTextView : TextView {
+class ShopHopAutoFitTextView : androidx.appcompat.widget.AppCompatTextView {
     var minTextSize: Float = 0.toFloat()
     var maxTextSize: Float = 0.toFloat()
 
