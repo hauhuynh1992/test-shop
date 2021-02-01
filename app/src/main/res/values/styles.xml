@@ -85,7 +85,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/sh_font_size_small</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
     </style>
 
     <style name="ShopHopHeading">
@@ -93,7 +93,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/ShopHop_textColorPrimary</item>
         <item name="android:textSize">@dimen/sh_font_size_medium</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
 
@@ -111,7 +111,7 @@
         <item name="android:textSize">@dimen/sh_font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
 
     </style>
 
@@ -120,7 +120,7 @@
         <item name="android:textSize">@dimen/sh_font_size_small</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
         <item name="android:foreground">?android:attr/selectableItemBackgroundBorderless</item>
         <item name="android:drawablePadding">@dimen/sh_spacing_standard</item>
         <item name="android:padding">@dimen/sh_spacing_standard</item>
@@ -149,7 +149,7 @@
         <item name="android:drawableTint" tools:targetApi="m">@color/ShopHop_yellow</item>
         <item name="android:textColor">@color/ShopHop_textColorPrimary</item>
         <item name="android:textSize">@dimen/sh_font_size_small</item>
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
     </style>
 
     <style name="ShopHopRatingSeekBar">
@@ -176,7 +176,7 @@
         <item name="android:layout_weight">2</item>
         <item name="android:textColor">@color/ShopHop_textColorPrimary</item>
         <item name="android:textAlignment">center</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
         <item name="android:padding">@dimen/sh_spacing_medium</item>
         <item name="android:background">@color/ShopHop_more_infoHeading_background</item>
     </style>
@@ -187,7 +187,7 @@
         <item name="android:layout_weight">3</item>
         <item name="android:textColor">@color/ShopHop_textColorPrimary</item>
         <item name="android:textAlignment">textStart</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
         <item name="android:padding">@dimen/sh_spacing_medium</item>
         <item name="android:paddingStart">@dimen/sh_spacing_mxlarge</item>
         <item name="android:background">@color/ShopHop_more_infoValue_background</item>
@@ -203,7 +203,7 @@
         <item name="android:paddingTop">@dimen/sh_spacing_medium</item>
         <item name="android:paddingBottom">@dimen/sh_spacing_medium</item>
         <item name="android:textSize">@dimen/sh_font_size_small</item>
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
         <item name="android:background">@drawable/shophop_bg_ractangle_rounded</item>
     </style>
 
@@ -213,7 +213,7 @@
         <item name="android:layout_marginTop">@dimen/sh_spacing_control</item>
         <item name="android:textColor">@color/ShopHop_textColorSecondary</item>
         <item name="android:textSize">@dimen/sh_font_size_small</item>
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
     </style>
 
     <style name="ShopHopRatingBar" parent="Theme.MaterialComponents">
@@ -229,7 +229,7 @@
         <item name="android:layout_marginEnd">@dimen/sh_spacing_standard_new</item>
         <item name="android:layout_marginBottom">@dimen/sh_spacing_middle</item>
         <item name="android:textSize">@dimen/sh_font_size_medium</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
         <item name="android:textColor">@color/ShopHop_textColorPrimary</item>
         <item name="android:background">@drawable/shophop_bg_rectangle_order</item>
         <item name="android:drawablePadding">@dimen/sh_spacing_standard</item>
@@ -243,7 +243,7 @@
         <item name="android:padding">@dimen/_14sdp</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/sh_font_size_small</item>
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
     </style>
 
     <style name="ShopHopBottomButton.White">
@@ -271,7 +271,7 @@
         <item name="android:textSize">@dimen/sh_font_size_medium</item>
         <item name="android:layout_marginTop">@dimen/sh_spacing_control_half</item>
         <item name="android:singleLine">true</item>
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
 
     </style>
 
@@ -292,9 +292,9 @@
         <item name="android:textSize">@dimen/sh_font_size_micro</item>
     </style>
 
-        <style name="ShopHopTabLayout" parent="@android:style/TextAppearance.Widget.TabWidget">
-<!--            <item name="fontPath">@string/sh_font_medium</item>-->
-        </style>
+    <style name="ShopHopTabLayout" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="fontPath">@string/sh_font_medium</item>
+    </style>
 
     <style name="ShopHopCollapsingTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/ShopHop_white</item>
@@ -303,15 +303,15 @@
     </style>
 
     <style name="FontMedium">
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
     </style>
 
     <style name="FontSemiBold">
-        <!--        <item name="fontPath">@string/sh_font_semi_bold</item>-->
+        <item name="fontPath">@string/sh_font_semi_bold</item>
     </style>
 
     <style name="FontBold">
-        <!--        <item name="fontPath">@string/sh_font_bold</item>-->
+        <item name="fontPath">@string/sh_font_bold</item>
     </style>
 
     <style name="ShopHopCollapsedAppBar" parent="@android:style/TextAppearance.Medium">
@@ -376,7 +376,7 @@
         <item name="android:textColor">@color/ShopHop_textColorSecondary</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/sh_font_size_normal</item>
-        <!--        <item name="fontPath">@string/sh_font_medium</item>-->
+        <item name="fontPath">@string/sh_font_medium</item>
 
     </style>
 

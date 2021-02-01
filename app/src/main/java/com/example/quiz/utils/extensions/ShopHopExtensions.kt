@@ -49,9 +49,11 @@ fun isNetworkAvailable(): Boolean {
 inline fun <T : View> T.onClick(crossinline func: T.() -> Unit) = setOnClickListener { func() }
 
 
-inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) = beginTransaction().func().commit()
+inline fun FragmentManager.inTransaction(func: FragmentTransaction.() -> FragmentTransaction) =
+    beginTransaction().func().commit()
 
-fun Activity.snackBar(msg: String, length: Int = Snackbar.LENGTH_SHORT) = Snackbar.make(findViewById(android.R.id.content), msg, length).setTextColor(Color.WHITE).show()
+fun Activity.snackBar(msg: String, length: Int = Snackbar.LENGTH_SHORT) =
+    Snackbar.make(findViewById(android.R.id.content), msg, length).setTextColor(Color.WHITE).show()
 
 fun Fragment.snackBar(msg: String) = activity!!.snackBar(msg)
 
@@ -63,7 +65,11 @@ fun Snackbar.setTextColor(color: Int): Snackbar {
 }
 
 fun Activity.showPermissionAlert(view: View) {
-    val snackBar = Snackbar.make(view, getString(R.string.sh_error_permission_required), Snackbar.LENGTH_INDEFINITE)
+    val snackBar = Snackbar.make(
+        view,
+        getString(R.string.sh_error_permission_required),
+        Snackbar.LENGTH_INDEFINITE
+    )
     val sbView = snackBar.view
     snackBar.setAction("Enable") {
         val intent = Intent()
@@ -73,24 +79,53 @@ fun Activity.showPermissionAlert(view: View) {
         startActivity(intent)
         snackBar.dismiss()
     }
-    sbView.setBackgroundColor(ContextCompat.getColor(this,R.color.ShopHop_tomato));snackBar.setTextColor(Color.WHITE);snackBar.show()
+    sbView.setBackgroundColor(
+        ContextCompat.getColor(
+            this,
+            R.color.ShopHop_tomato
+        )
+    );snackBar.setTextColor(Color.WHITE);snackBar.show()
 }
 
-fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) = supportFragmentManager.inTransaction { replace(frameId, fragment) }
+fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) =
+    supportFragmentManager.inTransaction { replace(frameId, fragment) }
 
-fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) = supportFragmentManager.inTransaction { add(frameId, fragment) }
+fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) =
+    supportFragmentManager.inTransaction { add(frameId, fragment) }
 
-fun AppCompatActivity.removeFragment(fragment: Fragment) = supportFragmentManager.inTransaction { remove(fragment) }
+fun AppCompatActivity.removeFragment(fragment: Fragment) =
+    supportFragmentManager.inTransaction { remove(fragment) }
 
 fun AppCompatActivity.showFragment(fragment: Fragment) = supportFragmentManager.inTransaction {
     setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
     show(fragment)
 }
+
 fun AppCompatActivity.hideFragment(fragment: Fragment) = supportFragmentManager.inTransaction {
     hide(fragment)
 }
 
-fun runDelayed(delayMillis: Long, action: () -> Unit) = Handler().postDelayed(Runnable(action), delayMillis)
+fun Fragment.replaceFragment(fragment: Fragment, frameId: Int) =
+    childFragmentManager.inTransaction { replace(frameId, fragment) }
+
+fun Fragment.addFragment(fragment: Fragment, frameId: Int) =
+    childFragmentManager.inTransaction { add(frameId, fragment) }
+
+fun Fragment.removeFragment(fragment: Fragment) =
+    childFragmentManager.inTransaction { remove(fragment) }
+
+fun Fragment.showFragment(fragment: Fragment) = childFragmentManager.inTransaction {
+    setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+    show(fragment)
+}
+
+fun Fragment.hideFragment(fragment: Fragment) = childFragmentManager.inTransaction {
+    hide(fragment)
+}
+
+
+fun runDelayed(delayMillis: Long, action: () -> Unit) =
+    Handler().postDelayed(Runnable(action), delayMillis)
 
 fun <T : RecyclerView.ViewHolder> T.onClick(event: (view: View, position: Int, type: Int) -> Unit): T {
     itemView.setOnClickListener {
@@ -99,13 +134,16 @@ fun <T : RecyclerView.ViewHolder> T.onClick(event: (view: View, position: Int, t
     return this
 }
 
-infix fun ViewGroup.inflate(layoutRes: Int): View = LayoutInflater.from(context).inflate(layoutRes, this, false)
+infix fun ViewGroup.inflate(layoutRes: Int): View =
+    LayoutInflater.from(context).inflate(layoutRes, this, false)
 
-fun Activity.toast(@StringRes stringRes: Int, duration: Int = Toast.LENGTH_SHORT) = Toast.makeText(this, stringRes, duration).show()
+fun Activity.toast(@StringRes stringRes: Int, duration: Int = Toast.LENGTH_SHORT) =
+    Toast.makeText(this, stringRes, duration).show()
 
 fun Activity.hideSoftKeyboard() {
     if (currentFocus != null) {
-        val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val inputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
     }
 }
@@ -137,7 +175,11 @@ inline fun <reified T : Any> Activity.launchActivityWithNewTask() {
     }
 }
 
-inline fun <reified T : Any> Activity.launchActivity(requestCode: Int = -1, options: Bundle? = null, noinline init: Intent.() -> Unit = {}) {
+inline fun <reified T : Any> Activity.launchActivity(
+    requestCode: Int = -1,
+    options: Bundle? = null,
+    noinline init: Intent.() -> Unit = {}
+) {
     val intent = newIntent<T>(this)
     intent.init()
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -154,7 +196,10 @@ fun Activity.launchPermissionSettingScreen() {
 inline fun <reified T : Any> newIntent(context: Context): Intent = Intent(context, T::class.java)
 
 
-fun FragmentActivity.requestPermissions(permissions: Array<String>, onResult: (isGranted: Boolean) -> Unit) {
+fun FragmentActivity.requestPermissions(
+    permissions: Array<String>,
+    onResult: (isGranted: Boolean) -> Unit
+) {
     if (isPermissionGranted(permissions)) {
         onResult(true)
         return
@@ -191,25 +236,26 @@ fun RecyclerView.setHorizontalLayout(aReverseLayout: Boolean = false) {
 fun Activity.getVerticalLayout(aReverseLayout: Boolean = false): LinearLayoutManager {
     return LinearLayoutManager(this, RecyclerView.VERTICAL, aReverseLayout)
 }
+
 fun FragmentActivity.showGPSEnableDialog() {
     AlertDialog.Builder(this).setMessage(getString(R.string.sh_error_gps_not_enabled))
-            .setPositiveButton(getString(R.string.sh_lbl_enable)) { dialog, _ ->
-                dialog.dismiss()
-                launchPermissionSettingScreen()
-            }
-            .setNegativeButton(getString(R.string.sh_lbl_cancel)) { dialog, _ -> dialog.dismiss() }
-            .show()
+        .setPositiveButton(getString(R.string.sh_lbl_enable)) { dialog, _ ->
+            dialog.dismiss()
+            launchPermissionSettingScreen()
+        }
+        .setNegativeButton(getString(R.string.sh_lbl_cancel)) { dialog, _ -> dialog.dismiss() }
+        .show()
 }
 
 fun FragmentActivity.showQtyChangeDialog(onResult: (string: String) -> Unit) {
     val qty = resources.getStringArray(R.array.sh_qty_array)
     AlertDialog.Builder(this)
-            .setTitle(getString(R.string.sh_lbl_change_qty))
-            .setSingleChoiceItems(qty, 0) { dialog, which ->
-                onResult(qty[which])
-                dialog.dismiss()
-            }
-            .show()
+        .setTitle(getString(R.string.sh_lbl_change_qty))
+        .setSingleChoiceItems(qty, 0) { dialog, which ->
+            onResult(qty[which])
+            dialog.dismiss()
+        }
+        .show()
 
 }
 

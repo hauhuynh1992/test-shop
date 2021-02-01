@@ -18,15 +18,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/ShopHopAppTheme">
 
-        <activity
-            android:name="com.example.quiz.activity.ShopHopSplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme.Splash">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.quiz.activity.ShopHopSplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ShopHopAppTheme.Splash">
+
 
         </activity>
         <activity

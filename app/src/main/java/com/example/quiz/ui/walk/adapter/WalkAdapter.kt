@@ -1,4 +1,4 @@
-package com.example.quiz.adapter
+package com.example.quiz.ui.walk.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,7 +7,7 @@ import androidx.viewpager.widget.PagerAdapter
 import com.example.quiz.R
 import kotlinx.android.synthetic.main.shophop_layout_walk.view.*
 
-class ShopHopWalkAdapter : PagerAdapter() {
+class WalkAdapter : PagerAdapter() {
 
     private val mImg = arrayOf(
         R.drawable.shophop_ic_walk_1,

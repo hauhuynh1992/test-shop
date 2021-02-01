@@ -1,10 +1,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.quiz.ui.auth.LoginFragment"
-        android:label="LoginFragment" />
+        android:id="@+id/splashFragment"
+        android:name="com.example.quiz.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_walkThroughFragment"
+            app:destination="@id/walkThroughFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/walkThroughFragment"
+        android:name="com.example.quiz.ui.walk.WalkThroughFragment"
+        android:label="WalkThroughFragment"
+        tools:layout="@layout/fragment_walk_through">
+        <action
+            android:id="@+id/action_walkThroughFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.quiz.ui.home.DashboardFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" />
 </navigation>

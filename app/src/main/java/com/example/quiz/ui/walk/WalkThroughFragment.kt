@@ -1,15 +1,21 @@
-package com.example.quiz.activity
+package com.example.quiz.ui.walk
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import com.example.quiz.R
-import com.example.quiz.ShopHopAppBaseActivity
+import com.example.quiz.databinding.FragmentWalkThroughBinding
 import com.example.quiz.ui.walk.adapter.WalkAdapter
 import com.example.quiz.utils.ShopHopCarouselEffectTransformer
-import com.example.quiz.utils.ShopHopConstants.SharedPref.SHOW_SWIPE
-import com.example.quiz.utils.extensions.*
-import kotlinx.android.synthetic.main.shophop_activity_walk_through.*
+import com.example.quiz.utils.extensions.onClick
+import com.example.quiz.utils.extensions.onPageSelected
+import kotlinx.android.synthetic.main.fragment_walk_through.*
 
-class ShopHopWalkThroughActivity : ShopHopAppBaseActivity() {
+class WalkThroughFragment : Fragment() {
+
 
     var mCount: Int? = null
     var mHeading = arrayOf("Hi, We're Woobox!", "Most Unique Styles!", "Shop Till You Drop!")
@@ -19,9 +25,21 @@ class ShopHopWalkThroughActivity : ShopHopAppBaseActivity() {
         "Grab the best seller pieces at bargain prices."
     )
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.shophop_activity_walk_through)
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val binding = DataBindingUtil.inflate<FragmentWalkThroughBinding>(
+            inflater,
+            R.layout.fragment_walk_through, container, false
+        )
+        return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
         init()
         val adapter = WalkAdapter()
 
@@ -29,17 +47,12 @@ class ShopHopWalkThroughActivity : ShopHopAppBaseActivity() {
         dots.attachViewPager(ViewPager)
         dots.setDotDrawable(R.drawable.shophop_bg_circle_primary, R.drawable.shophop_bg_black_dot)
         mCount = adapter.count
-        if (getSharedPrefInstance().getBooleanValue(SHOW_SWIPE)) {
-            launchActivity<ShopHopDashBoardActivity>()
-            finish()
-        }
         btnStatShopping.onClick {
-            launchActivity<ShopHopDashBoardActivity>()
-            getSharedPrefInstance().setValue(SHOW_SWIPE, true)
-            finish()
+//            findNavController().navigate(R.id.action_walkThroughFragment_to_homeFragment)
         }
+
+
         llSignIn.onClick {
-            launchActivity<ShopHopSignInUpActivity>()
         }
     }
 
@@ -48,13 +61,17 @@ class ShopHopWalkThroughActivity : ShopHopAppBaseActivity() {
             clipChildren = false
             pageMargin = resources.getDimensionPixelOffset(R.dimen.sh_spacing_small)
             offscreenPageLimit = 3
-            setPageTransformer(false,
-                ShopHopCarouselEffectTransformer(this@ShopHopWalkThroughActivity)
+            setPageTransformer(
+                false,
+                ShopHopCarouselEffectTransformer(requireContext())
             )
             offscreenPageLimit = 0
 
             onPageSelected { position: Int ->
-                val animFadeIn = android.view.animation.AnimationUtils.loadAnimation(applicationContext, R.anim.shophop_fade_in)
+                val animFadeIn = android.view.animation.AnimationUtils.loadAnimation(
+                    requireContext(),
+                    R.anim.shophop_fade_in
+                )
                 tvHeading.startAnimation(animFadeIn)
                 tvSubHeading.startAnimation(animFadeIn)
                 tvHeading.text = mHeading[position]
