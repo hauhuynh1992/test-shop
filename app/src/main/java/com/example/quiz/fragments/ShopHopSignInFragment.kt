@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.RelativeLayout
 import com.example.quiz.R
-import com.example.quiz.activity.ShopHopDashBoardActivity
-import com.example.quiz.activity.ShopHopSignInUpActivity
 import com.example.quiz.utils.ShopHopOTPEditText
 import com.example.quiz.utils.extensions.*
 import kotlinx.android.synthetic.main.shophop_dialog_change_password.*
@@ -30,7 +28,8 @@ class ShopHopSignInFragment : ShopHopBaseFragment() {
     private fun initializeFragment() {
         edtEmail.onFocusChangeListener = this
         edtPassword.onFocusChangeListener = this
-        edtPassword.transformationMethod = BiggerDotTransformation
+        edtPassword.transformationMethod =
+            BiggerDotTransformation
 
         edtEmail.setSelection(edtEmail.length())
         btnSignIn.onClick {
@@ -44,7 +43,7 @@ class ShopHopSignInFragment : ShopHopBaseFragment() {
         }
 
         btnSignUp.onClick {
-            (activity as ShopHopSignInUpActivity).loadSignUpFragment()
+
         }
         tvForget.onClick {
             showChangePasswordDialog()
@@ -73,7 +72,7 @@ class ShopHopSignInFragment : ShopHopBaseFragment() {
         signIn(onResult = {
             if (it) {
                 if (activity != null) {
-                    activity!!.launchActivityWithNewTask<ShopHopDashBoardActivity>()
+//                    activity!!.launchActivityWithNewTask<ShopHopDashBoardActivity>()
                 }
             }
         })
@@ -82,14 +81,16 @@ class ShopHopSignInFragment : ShopHopBaseFragment() {
 
     private fun showChangePasswordDialog() {
         //if (changePasswordDialog==null){
-        val changePasswordDialog = Dialog(activity!!)
+        val changePasswordDialog = Dialog(requireContext())
         changePasswordDialog.window?.setBackgroundDrawable(ColorDrawable(0))
         changePasswordDialog.setContentView(R.layout.shophop_dialog_change_password)
         changePasswordDialog.window?.setLayout(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-        changePasswordDialog.edtNewPassword.transformationMethod = BiggerDotTransformation
-        changePasswordDialog.edtconfirmPassword.transformationMethod = BiggerDotTransformation
+        changePasswordDialog.edtNewPassword.transformationMethod =
+            BiggerDotTransformation
+        changePasswordDialog.edtconfirmPassword.transformationMethod =
+            BiggerDotTransformation
         mEds = arrayOf(changePasswordDialog.findViewById(R.id.edDigit1), changePasswordDialog.findViewById(R.id.edDigit2), changePasswordDialog.findViewById(R.id.edDigit3), changePasswordDialog.findViewById(R.id.edDigit4))
-        ShopHopOTPEditText(mEds!!, activity!!, activity?.getDrawable(R.color.ShopHop_transparent)!!, activity?.getDrawable(R.drawable.shophop_bg_unselected_dot)!!)
+        ShopHopOTPEditText(mEds!!, requireActivity(), activity?.getDrawable(R.color.ShopHop_transparent)!!, activity?.getDrawable(R.drawable.shophop_bg_unselected_dot)!!)
         mEds!!.forEachIndexed { _, editText ->
             editText?.onFocusChangeListener = focusChangeListener
         }

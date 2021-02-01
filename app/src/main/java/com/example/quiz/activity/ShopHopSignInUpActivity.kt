@@ -14,8 +14,10 @@ import com.example.quiz.utils.extensions.replaceFragment
 
 class ShopHopSignInUpActivity : ShopHopAppBaseActivity() {
 
-    private val mSignInFragment: ShopHopSignInFragment = ShopHopSignInFragment()
-    private val mSignUpFragment: ShopHopSignUpFragment = ShopHopSignUpFragment()
+    private val mSignInFragment: ShopHopSignInFragment =
+        ShopHopSignInFragment()
+    private val mSignUpFragment: ShopHopSignUpFragment =
+        ShopHopSignUpFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

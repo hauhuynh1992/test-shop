@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.quiz.R
 import com.example.quiz.databinding.FragmentWalkThroughBinding
 import com.example.quiz.ui.walk.adapter.WalkAdapter
@@ -48,11 +49,12 @@ class WalkThroughFragment : Fragment() {
         dots.setDotDrawable(R.drawable.shophop_bg_circle_primary, R.drawable.shophop_bg_black_dot)
         mCount = adapter.count
         btnStatShopping.onClick {
-//            findNavController().navigate(R.id.action_walkThroughFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_walkThroughFragment_to_dashboardFragment)
         }
 
 
         llSignIn.onClick {
+            findNavController().navigate(R.id.action_walkThroughFragment_to_signInFragment)
         }
     }
 

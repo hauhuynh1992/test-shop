@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.quiz.ShopHopAppBaseActivity
 import com.example.quiz.R
-import com.example.quiz.activity.ShopHopOTPActivity
 import com.example.quiz.activity.ShopHopSignInUpActivity
 import com.example.quiz.models.ShopHopRequestModel
 import com.example.quiz.utils.extensions.*
@@ -29,8 +28,10 @@ class ShopHopSignUpFragment : ShopHopBaseFragment() {
         edtConfirmPassword.onFocusChangeListener = this
         edtFirstName.onFocusChangeListener = this
         edtLastName.onFocusChangeListener = this
-        edtPassword.transformationMethod = BiggerDotTransformation
-        edtConfirmPassword.transformationMethod = BiggerDotTransformation
+        edtPassword.transformationMethod =
+            BiggerDotTransformation
+        edtConfirmPassword.transformationMethod =
+            BiggerDotTransformation
 
         btnSignUp.onClick {
             when {
@@ -51,7 +52,7 @@ class ShopHopSignUpFragment : ShopHopBaseFragment() {
         requestModel.lastName = edtLastName.textToString()
         requestModel.password = edtPassword.textToString()
         (activity as ShopHopAppBaseActivity).registerUser(requestModel, false)
-        activity!!.launchActivity<ShopHopOTPActivity>()
+//        activity!!.launchActivity<ShopHopOTPActivity>()
         (activity as ShopHopSignInUpActivity).loadSignInFragment()
 
     }
