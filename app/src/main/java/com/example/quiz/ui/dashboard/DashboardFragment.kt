@@ -58,15 +58,15 @@ class DashboardFragment : Fragment() {
 
         setUpDrawerToggle()
         setListener()
-
-        if (isLoggedIn()) {
-            cartCount()
-            setOrderCount()
-            setWishCount()
-            setCartCountFromPref()
-            llInfo.show()
-
-        }
+//
+//        if (isLoggedIn()) {
+//            cartCount()
+//            setOrderCount()
+//            setWishCount()
+//            setCartCountFromPref()
+//            llInfo.show()
+//
+//        }
 
         ivCloseDrawer.onClick {
             closeDrawer()
@@ -221,11 +221,11 @@ class DashboardFragment : Fragment() {
     }
 
     private fun showCartCount() {
-        if (isLoggedIn() && !count.checkIsEmpty() && !count.equals("0", false)) {
-            tvNotificationCount.show()
-        } else {
-            tvNotificationCount.hide()
-        }
+//        if (isLoggedIn() && !count.checkIsEmpty() && !count.equals("0", false)) {
+//            tvNotificationCount.show()
+//        } else {
+//            tvNotificationCount.hide()
+//        }
 
     }
 
@@ -314,10 +314,10 @@ class DashboardFragment : Fragment() {
     }
 
     private fun setUserInfo() {
-        txtDisplayName.text = getUserFullName()
-        if (getProfile().isNotEmpty() && isLoggedIn()) {
-            val uri = Uri.parse(getProfile())
-            if (uri != null) civProfile.setImageURI(uri)
-        }
+//        txtDisplayName.text = getUserFullName()
+//        if (getProfile().isNotEmpty() && isLoggedIn()) {
+//            val uri = Uri.parse(getProfile())
+//            if (uri != null) civProfile.setImageURI(uri)
+//        }
     }
 }

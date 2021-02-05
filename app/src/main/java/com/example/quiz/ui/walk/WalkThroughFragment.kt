@@ -1,22 +1,27 @@
 package com.example.quiz.ui.walk
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.quiz.R
+import com.example.quiz.activity.ShopHopDashBoardActivity
+import com.example.quiz.activity.ShopHopSignInUpActivity
 import com.example.quiz.databinding.FragmentWalkThroughBinding
+import com.example.quiz.ui.base.BaseFragment
 import com.example.quiz.ui.walk.adapter.WalkAdapter
 import com.example.quiz.utils.ShopHopCarouselEffectTransformer
+import com.example.quiz.utils.ShopHopConstants
+import com.example.quiz.utils.extensions.getSharedPrefInstance
+import com.example.quiz.utils.extensions.launchActivity
 import com.example.quiz.utils.extensions.onClick
 import com.example.quiz.utils.extensions.onPageSelected
 import kotlinx.android.synthetic.main.fragment_walk_through.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class WalkThroughFragment : Fragment() {
+class WalkThroughFragment : BaseFragment<FragmentWalkThroughBinding, WalkThroughViewModel>() {
 
+    override val viewModel: WalkThroughViewModel by viewModel()
+    override val layoutId: Int
+        get() = R.layout.fragment_walk_through
 
     var mCount: Int? = null
     var mHeading = arrayOf("Hi, We're Woobox!", "Most Unique Styles!", "Shop Till You Drop!")
@@ -26,21 +31,8 @@ class WalkThroughFragment : Fragment() {
         "Grab the best seller pieces at bargain prices."
     )
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding = DataBindingUtil.inflate<FragmentWalkThroughBinding>(
-            inflater,
-            R.layout.fragment_walk_through, container, false
-        )
-        return binding.root
-    }
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         init()
         val adapter = WalkAdapter()
 
@@ -48,13 +40,21 @@ class WalkThroughFragment : Fragment() {
         dots.attachViewPager(ViewPager)
         dots.setDotDrawable(R.drawable.shophop_bg_circle_primary, R.drawable.shophop_bg_black_dot)
         mCount = adapter.count
+//        if (getSharedPrefInstance().getBooleanValue(ShopHopConstants.SharedPref.SHOW_SWIPE)) {
+//            launchActivity<ShopHopDashBoardActivity>()
+//            finish()
+//        }
         btnStatShopping.onClick {
-            findNavController().navigate(R.id.action_walkThroughFragment_to_dashboardFragment)
+//            launchActivity<ShopHopDashBoardActivity>()
+//            getSharedPrefInstance().setValue(ShopHopConstants.SharedPref.SHOW_SWIPE, true)
+//            finish()
+        }
+        llSignIn.onClick {
+//            launchActivity<ShopHopSignInUpActivity>()
         }
 
-
-        llSignIn.onClick {
-            findNavController().navigate(R.id.action_walkThroughFragment_to_signInFragment)
+        btnStatShopping.setOnClickListener {
+            findNavController().navigate(R.id.action_walkThroughFragment_to_dashboardFragment)
         }
     }
 
@@ -63,17 +63,13 @@ class WalkThroughFragment : Fragment() {
             clipChildren = false
             pageMargin = resources.getDimensionPixelOffset(R.dimen.sh_spacing_small)
             offscreenPageLimit = 3
-            setPageTransformer(
-                false,
+            setPageTransformer(false,
                 ShopHopCarouselEffectTransformer(requireContext())
             )
             offscreenPageLimit = 0
 
             onPageSelected { position: Int ->
-                val animFadeIn = android.view.animation.AnimationUtils.loadAnimation(
-                    requireContext(),
-                    R.anim.shophop_fade_in
-                )
+                val animFadeIn = android.view.animation.AnimationUtils.loadAnimation(requireContext(), R.anim.shophop_fade_in)
                 tvHeading.startAnimation(animFadeIn)
                 tvSubHeading.startAnimation(animFadeIn)
                 tvHeading.text = mHeading[position]

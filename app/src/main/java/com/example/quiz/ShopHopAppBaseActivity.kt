@@ -13,7 +13,6 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
-import com.example.quiz.ShopHopApp.Companion.noInternetDialog
 import com.example.quiz.utils.extensions.changeToolbarFont
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
@@ -36,7 +35,7 @@ open class ShopHopAppBaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStatusBarGradient(this)
-        noInternetDialog = null
+//        noInternetDialog = null
 
         if (progressDialog == null) {
             progressDialog = Dialog(this)

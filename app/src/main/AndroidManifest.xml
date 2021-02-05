@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
-        android:name=".ShopHopApp"
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -26,126 +26,126 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="com.example.quiz.activity.ShopHopSplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme.Splash">
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopSplashActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme.Splash">-->
 
 
-        </activity>
-        <activity
-            android:name="com.example.quiz.activity.ShopHopSubCategoryActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity android:name=".ShopHopAppBaseActivity" />
-        <activity
-            android:name="com.example.quiz.activity.ShopHopSignInUpActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme"
-            android:windowSoftInputMode="stateHidden|adjustPan" />
-        <activity
-            android:name=".activity.ShopHopOTPActivity"
-            android:theme="@style/ShopHopAppTheme"
-            android:windowSoftInputMode="stateVisible" />
-        <activity
-            android:name="com.example.quiz.activity.ShopHopWalkThroughActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopDashBoardActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name=".activity.ShopHopOrderDescriptionActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopOrderActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopProductDetailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopCollapsingTheme" />
-        <activity
-            android:name=".activity.ShopHopAddAddressActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopOrderSummaryActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopTrackItemActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopPaymentActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name="com.example.quiz.activity.ShopHopAccountActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name=".activity.ShopHopMyCartActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopSearchActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name="com.example.quiz.activity.ShopHopViewAllProductActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopRewardActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopAddressManagerActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopEditProfileActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme"
-            android:windowSoftInputMode="stateHidden" />
-        <activity
-            android:name="com.example.quiz.activity.ShopHopEmailActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopContactUsActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopFAQActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopSettingActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopCardActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopHelpActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopOfferActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
-        <activity
-            android:name=".activity.ShopHopQuickPayActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/ShopHopAppTheme" />
+        <!--        </activity>-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopSubCategoryActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity android:name=".ShopHopAppBaseActivity" />-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopSignInUpActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme"-->
+        <!--            android:windowSoftInputMode="stateHidden|adjustPan" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopOTPActivity"-->
+        <!--            android:theme="@style/ShopHopAppTheme"-->
+        <!--            android:windowSoftInputMode="stateVisible" />-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopWalkThroughActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopDashBoardActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme"-->
+        <!--            android:windowSoftInputMode="adjustPan" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopOrderDescriptionActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopOrderActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopProductDetailActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopCollapsingTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopAddAddressActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopOrderSummaryActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopTrackItemActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopPaymentActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopAccountActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme"-->
+        <!--            android:windowSoftInputMode="stateHidden" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopMyCartActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopSearchActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopViewAllProductActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopRewardActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopAddressManagerActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopEditProfileActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme"-->
+        <!--            android:windowSoftInputMode="stateHidden" />-->
+        <!--        <activity-->
+        <!--            android:name="com.example.quiz.activity.ShopHopEmailActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopContactUsActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopFAQActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopSettingActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopCardActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopHelpActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopOfferActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
+        <!--        <activity-->
+        <!--            android:name=".activity.ShopHopQuickPayActivity"-->
+        <!--            android:screenOrientation="portrait"-->
+        <!--            android:theme="@style/ShopHopAppTheme" />-->
     </application>
 
 </manifest>
